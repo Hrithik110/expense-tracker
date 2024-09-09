@@ -1,0 +1,73 @@
+.topExpensesContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20%;
+    z-index: 1;
+    font-family: Ubuntu;
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 2.01rem;
+    text-align: left;
+}
+.topExpensesContainer h1{
+    position: relative;
+    left: 0rem;
+
+}
+
+.barContainer {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.barContainer h4 {
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    text-align: left;
+    font-style:normal;
+    color: #000000;
+
+}
+.lines{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+.lines hr{
+    margin-left: 1rem;
+}
+@media (max-width:938px) {
+
+    .topExpensesContainer {
+    position: relative;
+    display: flex;
+    left: 3rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    /* margin-left: 5rem; */
+    z-index: 1;
+    font-family: Ubuntu;
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 2.01rem;
+    text-align: left;
+}
+}

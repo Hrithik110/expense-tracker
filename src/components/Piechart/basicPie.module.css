@@ -1,0 +1,26 @@
+.pieContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .legendContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .legendItem {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between legend items */
+  }
+  
+  .legendItem span {
+    margin-right: 5px;
+  }
+  
+  .recharts-wrapper {
+    padding: 0 !important;  /* Remove padding */
+    margin: 0 !important;   /* Remove margin */
+  }

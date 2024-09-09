@@ -1,0 +1,38 @@
+
+
+.container h1 {
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    text-align: left;
+    position: relative;
+    left: 2em;
+}
+.transactionsTracker{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+
+}
+@media (max-width:938px) {
+    .transactionsTracker{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+    
+    }
+    .container h1 {
+        color: #FFFFFF;
+        font-family: Ubuntu;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.3rem;
+        text-align: left;
+        position: relative;
+        left: 2em;
+    }
+    
+}
