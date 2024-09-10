@@ -15,7 +15,7 @@ const Main = ({setisModalOpen})=>{
   const [expense, setExpense] = useState(sExpense ? sExpense : 0);
    
   useEffect(()=>{
-
+    console.log(expense);
   },[expenses, income, expense]);
 
     return(

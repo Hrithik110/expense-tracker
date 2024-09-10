@@ -25,7 +25,7 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
     const handleSubmit = (e)=>{
         e.preventDefault();
        if(checkValidations(inputVals)){
-
+        
         if(index !==-1){
             setPriceDiff(Number(inputVals.price) - Number(localExpenses[index].price));
             localExpenses[index].title = inputVals.title;
@@ -59,9 +59,11 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
     }
 
     useEffect(()=>{
-        setExpense((prev)=>(prev+priceDiff));
-        setIncome((prev)=>prev-priceDiff);
-        localStorage.setItem('balance',(localStorage.getItem('balance')-priceDiff));
+        setExpense((prev)=>(Number(prev)+Number(priceDiff)));
+        setIncome((prev)=>prev-Number(priceDiff));
+
+
+        localStorage.setItem('balance',(Number(localStorage.getItem('balance'))-Number(priceDiff)));
         
     },[priceDiff])
 
