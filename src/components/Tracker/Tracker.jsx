@@ -65,8 +65,7 @@ const Tracker = ({ setExpenses, setIncome, income, sIncome, sExpense, setExpense
         )
         setExpensesData(result);
         }
-
-        localStorage.setItem('expense', expense);
+      
         
     }, [expense])
 

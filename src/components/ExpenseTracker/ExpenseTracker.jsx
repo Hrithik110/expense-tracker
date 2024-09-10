@@ -13,10 +13,7 @@ useEffect(()=>{
     const balance = localStorage.getItem('balance');
     setIncome(balance);
 },[])
-useEffect(()=>{
-    const balance = localStorage.getItem('balance');
-    setIncome(balance);
-},[income])
+
 
 return(
     <div className={styles.balanceConatiner}>

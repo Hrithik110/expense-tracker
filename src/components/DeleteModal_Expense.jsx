@@ -18,7 +18,6 @@ export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, 
     const handleDelete = ()=>{
 
         alert('Are you sure you want to delete this expense?');
-        debugger;
         const index = localExpense.findIndex(ele => ele.id == id);
 
         setPrice(localExpense[index].price);        
@@ -42,10 +41,10 @@ export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, 
 
     useEffect(()=>{
 
-        setExpense((prev)=> prev-price);
-        localStorage.setItem('balance',(Number(localStorage.getItem('balance'))+Number(price)));
-        setIncome((prev)=>prev+price);
+        setExpense((prev)=> Number(prev)-price);
 
+        setIncome((prev)=>Number(prev)+price);
+       
     },[price]);
 
 
@@ -75,15 +74,11 @@ export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, 
                 <div className="modal">
                     <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
-                        <h1 style={{ color: "black" }}>{'Edit Expenses'} </h1>
-                           
-
+                        <h1 style={{ color: "black" }}>{'Delete Expenses'} </h1>
+                        
                                 <button id="expenseDelete" onClick={handleDelete}> Delete Expense</button>
 
                                 <button id="cancel" type="cancel" onClick={toggleModal}>Cancel </button>
-
-                                
-                        
                             
                     </div>
                 </div>

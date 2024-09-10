@@ -30,25 +30,30 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
        if(checkValidations(inputVals)){
         
         if(index !==-1){
-            setPriceDiff(Number(inputVals.price) - Number(localExpenses[index].price));
+            setPriceDiff((Number(inputVals.price) - Number(localExpenses[index].price)));
             localExpenses[index].title = inputVals.title;
             localExpenses[index].price = Number(inputVals.price);
             localExpenses[index].category = inputVals.category;
             localExpenses[index].date = inputVals.date;
         }
        
-
+       
           const updatedExpenses = [...localExpenses];
+          setLocalExpenses(updatedExpenses);
           setExpenses(updatedExpenses); 
           const sExpense = localStorage.getItem('expense');
           const bal = localStorage.getItem('balance');
           const newExp = Number(sExpense)+Number(inputVals.price);
 
-          if(bal<0 || (Number(inputVals.price)>Number(bal))){
+          if(bal<0 || (Number(Number(inputVals.price) - Number(localExpenses[index].price))>Number(bal))){
             enqueueSnackbar('Insufficient Balance: ₹'+bal, {variant: 'error'});
           }
           else{
             localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
+           
+
+
+
           toggleModal();
           enqueueSnackbar("Expense added successfully", { variant: "success" });
           }
@@ -62,11 +67,9 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
     }
 
     useEffect(()=>{
-        setExpense((prev)=>(Number(prev)+Number(priceDiff)));
-        setIncome((prev)=>prev-Number(priceDiff));
+          setExpense((prev)=>Number(prev)+priceDiff);
 
-
-        localStorage.setItem('balance',(Number(localStorage.getItem('balance'))-Number(priceDiff)));
+            setIncome((prev)=>Number(prev)-priceDiff);
         
     },[priceDiff])
 

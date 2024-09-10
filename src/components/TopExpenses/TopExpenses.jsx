@@ -80,7 +80,7 @@ const TopExpenses = ({ data }) => {
                         <tr align="right" className={styles.lines} key={idx}>
                             <td style={{ width: '6rem' }}><h4>{ele.name}</h4></td>
 
-                            <td style={{ width: 'auto' }}> <hr style={{ width: `${Number(ele.value) * 8 / total}rem`, height: '1.4rem', borderRadius: '0px 20px 20px 0px', backgroundColor: '#8784D2' }} />
+                            <td style={{ width: '12rem' }}> <hr style={{ width: `${Number(ele.value) * 5 / total}rem`, height: '1.4rem', borderRadius: '0px 20px 20px 0px', backgroundColor: '#8784D2' }} />
                             </td>
                         </tr>
                     ))}
