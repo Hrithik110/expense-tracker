@@ -11,6 +11,9 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
     const[localExpenses, setLocalExpenses] = useState([]);
     const [priceDiff, setPriceDiff] = useState(0);
 
+    useEffect(() => {
+        setModal(isOpen); 
+    }, [isOpen]);
 
     let index = localExpenses.findIndex(ele => ele.id === id);
     useEffect(() => {
@@ -87,7 +90,7 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
     };
 
     useEffect(() => {
-        if (isOpen) {
+        if (modal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
@@ -97,7 +100,7 @@ export default function EditModal_Expense({ isOpen, options, setExpenses , setEx
         return () => {
             document.body.classList.remove('active-modal');
         };
-    }, [isOpen]);
+    }, [modal]);
 
  const checkValidations = (data)=>{
     console.log(data.title);

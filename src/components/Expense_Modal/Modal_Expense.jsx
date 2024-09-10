@@ -10,7 +10,9 @@ export default function Modal_Expense({add, isOpen, options, setExpenses , setEx
     const { enqueueSnackbar, closeSnackbar } = useSnackbar()
     const[localExpenses, setLocalExpenses] = useState([]);
 
-
+    useEffect(() => {
+        setModal(isOpen); 
+    }, [isOpen]);
 
     useEffect(() => {
         const storedExpenses = localStorage.getItem("expenses");
@@ -79,7 +81,7 @@ export default function Modal_Expense({add, isOpen, options, setExpenses , setEx
     };
 
     useEffect(() => {
-        if (isOpen) {
+        if (modal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
@@ -89,7 +91,7 @@ export default function Modal_Expense({add, isOpen, options, setExpenses , setEx
         return () => {
             document.body.classList.remove('active-modal');
         };
-    }, [isOpen]);
+    }, [modal]);
 
  const checkValidations = (data)=>{
     console.log(data.title);

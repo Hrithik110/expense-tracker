@@ -7,6 +7,12 @@ export default function Modal_Expense({ isOpen, setIncome, income }) {
     const [localIncome, setLocalIncome] = useState('');
     const { enqueueSnackbar, closeSnackbar } = useSnackbar()
     
+
+    useEffect(() => {
+        setModal(isOpen); 
+    }, [isOpen]);
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         
@@ -34,7 +40,7 @@ export default function Modal_Expense({ isOpen, setIncome, income }) {
 
    
     useEffect(() => {
-        if (isOpen) {
+        if (modal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
@@ -44,7 +50,7 @@ export default function Modal_Expense({ isOpen, setIncome, income }) {
         return () => {
             document.body.classList.remove('active-modal');
         };
-    }, [isOpen]);
+    }, [modal]);
 
 
     return (

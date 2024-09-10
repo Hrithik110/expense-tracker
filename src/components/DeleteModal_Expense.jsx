@@ -10,6 +10,11 @@ export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, 
     const [localExpense, setLocalExpenses] = useState([]);
     const [price, setPrice] = useState(0);
 
+    useEffect(() => {
+        setModal(isOpen); 
+    }, [isOpen]);
+
+
     const handleDelete = ()=>{
 
         alert('Are you sure you want to delete this expense?');
@@ -49,7 +54,7 @@ export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, 
     };
 
     useEffect(() => {
-        if (isOpen) {
+        if (modal) {
             document.body.classList.add('active-modal');
         } else {
             document.body.classList.remove('active-modal');
@@ -59,7 +64,7 @@ export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, 
         return () => {
             document.body.classList.remove('active-modal');
         };
-    }, [isOpen]);
+    }, [modal]);
 
  
 

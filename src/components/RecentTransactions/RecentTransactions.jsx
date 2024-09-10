@@ -56,6 +56,7 @@ const RecentTransactions = ({expenses, setExpenses, expense, setExpense, income,
             setData(JSON.parse(storedData).slice(indexOfFirstItem, indexOfLastItem));
             setDataLength(JSON.parse(storedData).length);
         }
+        setExpense(expense);
  
     }, [expenses,currentPage, expense, income])
 
