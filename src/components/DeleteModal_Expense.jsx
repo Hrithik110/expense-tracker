@@ -2,7 +2,7 @@ import React, { useState , useEffect} from "react";
 
 import { useSnackbar } from "notistack";
 
-
+import "./delete.styles.css";
 export default function DeleteModal_Expense({ isOpen, setExpenses , setExpense, setIncome,income, expense, id}) {
  
     
